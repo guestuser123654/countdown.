@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <link href="style.css" rel="stylesheet" type="text/css" />
+  </head>
+
+<style>
+  
+  #h2{
+    font-size: 40px;
+    text-align: center;
+  }
+
+
+  .textbar {
+    text-align: center;
+    font-size: 30px;
+    font-family: Futura, 'Trebuchet MS', Arial, sans-serif;
+    font-style: italic;
+    font-variant: normal;
+    font-weight: bold;
+
+  }
+  
+  .textbar2 {
+    text-align: center;
+    font-size: 30px;
+    font-family: Futura, 'Trebuchet MS', Arial, sans-serif;
+    font-style: italic;
+    font-variant: normal;
+    font-weight: bold;
+    border: 10px;
+  }
+  
+  input[type="text"] {
+    width: 400px;
+}
+
+
+ #register, #login {
+display:inline-block;
+padding:0.3em 1.2em;
+margin:0 0.3em 0.3em 0;
+border-radius:2em;
+text-decoration:none;
+font-family:'Roboto',sans-serif;
+font-weight:300;
+color:#FFFFFF;
+background-color:#139487;
+text-align:center;
+transition: all 0.2s;
+font-size: 30px;
+
+}
+
+
+#register:hover{
+background-color:#00C897;
+}
+@media all and (max-width:30em){
+#register{
+display:block;
+margin:0.2em auto;
+}
+}
+
+#login:hover{
+background-color:#00C897;
+}
+@media all and (max-width:30em){
+#register{
+display:block;
+margin:0.2em auto;
+}
+}
+ 
+
+.center-box{
+  position: absolute;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+  border: 30px solid white;
+  border-radius: 45px;
+  width:600px;
+  height:470px;
+  text-align: center;
+  color:white;
+}
+
+body {
+  width: 99%;
+  height: 90vh;
+  color: #fff;
+  background: linear-gradient(-45deg, rgba(238, 115, 77, 0.658), rgba(147, 74, 231, 0.726), rgb(35, 106, 213), #2eb4cc);
+  background-size: 500% 500%;
+  position: relative;
+  animation-name: backgroundColorPalette;
+	animation-duration: 15s;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+	animation-timing-function: linear; 
+}
+
+@keyframes backgroundColorPalette {
+	0% {
+		background: #876445;
+	}
+
+	50% {
+		background: #CA965C;
+	}
+	
+	75% {
+	    background: #EEC373;
+	}
+
+	100% {
+		background: #F4DFBA;
+	}
+}
+
+
+</style>
+
+
+  <body id="landing-page">
+    <!-- HTML -->
+    
+    <div class= "center-box">
+      <h2 id="h2">Welcome to Countdown website! First Login to save your info.</h2>
+      <div class="aligncenter">
+      <input type="text" class ="textbar" name="userName" placeholder="your username" size="50px">
+      <br><br>
+      <input type="text" class ="textbar2" name="userID" placeholder="your userID" align="right" size="50px">
+      <br><br>
+      <button id="login" id="button">Sign In</button>
+            <br><br>
+      <button id="register" onclick="window.location.href='/landing-page2'">Register</button>
+    </div>
+     <!-- <p><a id="generate-link" href="landing-page2.html">Register</a></p>-->
+     <!--</div>-->
+
+
+
+    <script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-firestore.js"></script>
+
+    <script>
+
+     const firebaseConfig = {
+  apiKey: "AIzaSyAxjx1RkwT3gFdulJRPw58LMtmlvK-2XLM",
+  authDomain: "countdown-freedom-project.firebaseapp.com",
+  projectId: "countdown-freedom-project",
+  storageBucket: "countdown-freedom-project.appspot.com",
+  messagingSenderId: "484429118926",
+  appId: "1:484429118926:web:442bf51d11560f0893bf9f",
+  measurementId: "G-MHKB8KKFWK"
+};
+      if (!firebase.apps.length) {
+        firebase.initializeApp(firebaseConfig);
+      }
+
+      // const firebase = require("firebase");
+      // require("firebase/firestore");
+      var ff = firebase.firestore();
+      console.log(ff);
+    </script>
+    <script src="landing-page1.js"></script>
+  </body>
+</html>
